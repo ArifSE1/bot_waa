@@ -7,8 +7,9 @@ const client = new Client({
 });
 
 client.on('qr', qr => {
-  console.log('=== SCAN QR DI RAILWAY TERMINAL ===');
-  qrcode.generate(qr, { small: true });
+  console.log('📷 Scan QR ini di link berikut (copy ke browser):');
+  console.log(`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(qr)}`);
+  
 });
 
 client.on('ready', async () => {
